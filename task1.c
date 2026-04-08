@@ -64,3 +64,19 @@ void blocked_matrix_multiply(int A[SIZE][SIZE], int B[SIZE][SIZE], int C[SIZE][S
 
 // to call this function:
 // blocked_matrix_multiply(A, B, C);
+
+// function to compare the results of the matrix multiplication. compares if they have the same values in the resulting matrix C. If they are the same, it returns 1, otherwise it returns 0.
+int compare_matrices(int C1[SIZE][SIZE], int C2[SIZE][SIZE]) {
+    for (int i = 0; i < SIZE; i+){
+        for (int j = 0; j < SIZE; j++){
+            if(C1[i][j] != C2[i][j]){ // check if the values at [i][j] are different in both matrices. if they are different, it returns 0 which means false or not equal
+                return 0;
+            }
+        }
+    }
+    return 1;// if no missmatch, the return 1 which means true 
+}
+// to call this function:
+// if (compare_matrices(C1, C2)) {
+//     printf("The matrices are the same.\n");}
+
